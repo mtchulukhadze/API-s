@@ -17,3 +17,11 @@ def about():
             "info": "page"
         }
     }
+
+@app.get("/home")
+def home():
+    return {
+        "home": {
+            "name": "home"
+        }
+    }
