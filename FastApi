@@ -1,0 +1,61 @@
+
+from fastapi import FastAPI
+
+app = FastAPI()
+'''
+/hello
+/get_item
+
+localhost/hello
+'''
+
+'''
+GET - returning information
+POST - sending information/creating new data
+PUT - update existing database
+DELETE - delete information
+'''
+
+
+@app.get("/")
+def home():
+    return {
+        'Data': 'test',
+        'id': '376'
+    }
+
+@app.get("/about")
+def about():
+    return {
+        'Data': 'test'
+    }
+
+@app.get("/information")
+def info():
+    return {
+        "Data": "into"
+    }
+
+@app.post("/user")
+def create_user():
+    return {
+        "action": "create"
+    }
+
+'''
+For FastAPI
+
+@app.get("/about")      # GET - read data
+@app.post("/about")     # POST - create data
+@app.put("/about")      # PUT - update data
+@app.delete("/about")   # DELETE - delete data
+
+For Flask
+
+@app.route("/about", methods=["GET"])     # GET
+@app.route("/about", methods=["POST"])    # POST
+@app.route("/about", methods=["PUT"])     # PUT
+@app.route("/about", methods=["DELETE"])  # DELETE
+'''
+
+
